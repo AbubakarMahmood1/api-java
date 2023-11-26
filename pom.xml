@@ -49,6 +49,13 @@
     		<version>10.12.5</version>
 	</dependency>
 
+	<!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-checkstyle-plugin -->
+	<dependency>
+    		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-checkstyle-plugin</artifactId>
+    	<version>3.3.1</version>
+	</dependency>
+
     </dependencies>
 
     <build>
@@ -57,6 +64,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+
+		<groupId>org.apache.maven.plugins</groupId>
+    		<artifactId>maven-checkstyle-plugin</artifactId>
+    		<version>3.3.1</version>
+
+ 	    <configuration>
+                <configLocation>my_checkstyle.xml</configLocation>
+                <!-- Additional configuration if needed -->
+            </configuration>
             </plugin>
         </plugins>
     </build>

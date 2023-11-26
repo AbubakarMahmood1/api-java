@@ -1,0 +1,66 @@
+rules:
+  - id: avoid-system-out
+    patterns:
+      - pattern: |
+          System.out.println($expr)
+    message: "Avoid using System.out.println for logging"
+    severity: WARNING
+
+rules:
+  - id: use-logger
+    patterns:
+      - pattern: |
+          Logger.getLogger($expr).log($args)
+    message: "Prefer using a Logger for logging instead of direct log calls"
+    severity: WARNING
+
+rules:
+  - id: avoid-java-util-date
+    patterns:
+      - pattern: |
+          new Date()
+    message: "Avoid using java.util.Date; use java.time.Instant or java.time.LocalDateTime instead"
+    severity: WARNING
+
+rules:
+  - id: avoid-string-equality
+    patterns:
+      - pattern: |
+          $expr1 == $expr2
+    message: "Avoid using == for String comparison; use equals() method instead"
+    severity: WARNING
+
+rules:
+  - id: use-try-with-resources
+    patterns:
+      - pattern: |
+          try { $body } finally { $cleanup }
+    message: "Consider using try-with-resources for better resource management"
+    severity: WARNING
+
+rules:
+  - id: avoid-vector
+    patterns:
+      - pattern: |
+          new Vector()
+    message: "Avoid using java.util.Vector; use java.util.ArrayList or java.util.LinkedList instead"
+    severity: WARNING
+
+rules:
+  - id: use-stringbuilder-in-loop
+    patterns:
+      - pattern: |
+          String $var = "";
+          for ($type $loopVar : $iterable) {
+            $var += $loopVar;
+          }
+    message: "Consider using StringBuilder for efficient string concatenation in a loop"
+    severity: WARNING
+
+rules:
+  - id: avoid-unused-variable
+    patterns:
+      - pattern: |
+          $type $var = $expr;
+    message: "Avoid declaring unused variables"
+    severity: WARNING
