@@ -17,6 +17,8 @@ Run following commands
 
 ```bash
 java -jar target/crud-api-microservice-0.0.1-SNAPSHOT.jar
+or for those that have 8080 port
+java -jar target/crud-api-microservice-0.0.1-SNAPSHOT.jar --server.port=8083
 ```
 
 ## To Test
